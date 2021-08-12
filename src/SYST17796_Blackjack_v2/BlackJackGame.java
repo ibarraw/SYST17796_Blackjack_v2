@@ -12,8 +12,6 @@ public class BlackJackGame extends Game {
         super(name);
     }
 
-
-
     /**
      *
      * @param dealer

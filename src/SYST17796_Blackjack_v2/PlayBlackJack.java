@@ -23,7 +23,7 @@ public class PlayBlackJack {
         GroupOfCards playerHand = new GroupOfCards();
 
         //Player and Dealer objects created to player names and card hands
-        BlackJackDealer dealer = new BlackJackDealer("Casino player", dealerHand);
+        BlackJackDealer dealer = new BlackJackDealer("Casino dealer", dealerHand);
         BlackJackPlayer player = new BlackJackPlayer("Casino player", playerHand);
 
         //Deal two cards to the dealer and two cards to the player when start the game.
