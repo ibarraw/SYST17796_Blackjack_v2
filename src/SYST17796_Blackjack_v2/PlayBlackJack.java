@@ -4,7 +4,8 @@ package SYST17796_Blackjack_v2;
  *
  * @author Xianjun Wang July 2021
  * @modifier Chun Kiu So July 2021
- * @modifier William Ibarra July 2021
+ * @modifier William Ibarra August 2021
+ *
  */
 public class PlayBlackJack {
     /**
@@ -20,8 +21,10 @@ public class PlayBlackJack {
         //DealerHand and playerHand hold cards for the dealer and the player
         GroupOfCards dealerHand = new GroupOfCards();
         GroupOfCards playerHand = new GroupOfCards();
-        dealerHand.setName("Casino dealer");
-        playerHand.setName("Casino player");
+
+        //Player and Dealer objects created to player names and card hands
+        BlackJackDealer dealer = new BlackJackDealer("Casino player", dealerHand);
+        BlackJackPlayer player = new BlackJackPlayer("Casino player", playerHand);
 
         //Deal two cards to the dealer and two cards to the player when start the game.
         cardDeck.deal(2, dealerHand);
@@ -40,12 +43,12 @@ public class PlayBlackJack {
 
         //check player hand value
         System.out.println("\nChecking player hand value");
-        System.out.println("Dealer hand value: " + cardDeck.checkHandValue(dealerHand));
-        System.out.println("Player hand value: " + cardDeck.checkHandValue(playerHand));
+        System.out.println("Dealer hand value: " + cardDeck.CHValue(dealerHand));
+        System.out.println("Player hand value: " + cardDeck.CHValue(playerHand));
 
         //Testing the game
         BlackJackGame blackjack = new BlackJackGame("Blackjack");
-        blackjack.play(dealerHand, playerHand, cardDeck);
+        blackjack.play(dealer, player, cardDeck);
 
     }
 }

@@ -13,13 +13,12 @@ import java.util.Collections;
  * @author Paul Bonenfant Jan 2020
  * @modifier Xianjun Wang July 2021
  * @modifier Chun Kiu So July 2021
- * @modifier William Ibarra July 2021
+ * @modifier William Ibarra August 2021
  */
 public class GroupOfCards {
 
     //The group of cards, stored in an ArrayList
     protected ArrayList<Card> cards;
-    protected String name;
 
     public GroupOfCards () {
         cards = new ArrayList<>();
@@ -50,19 +49,12 @@ public class GroupOfCards {
         }
     }
 
-    public String getName () {
-        return name;
-    }
-
-    public void setName (String name) {
-        this.name = name;
-    }
-
     /**
      * @return the size of the group of cards
      */
     public int getSize () {
         return cards.size();
     }
+
 
 }//end class

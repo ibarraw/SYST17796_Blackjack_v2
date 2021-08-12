@@ -9,6 +9,7 @@ import java.util.ArrayList;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @modifier William Ibarra August 2021
  */
 public abstract class Game {
 
@@ -41,7 +42,7 @@ public abstract class Game {
         this.players = players;
     }
 
-    public abstract void play (GroupOfCards dealer, GroupOfCards player, Deck deck);
+    public abstract void play (BlackJackDealer dealer, BlackJackPlayer player, Deck deck);
 
-    public abstract void declareWinner (GroupOfCards person);
+    public abstract void declareWinner (Player person);
 }//end class

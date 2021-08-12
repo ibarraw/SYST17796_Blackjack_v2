@@ -34,7 +34,7 @@ public class Deck extends GroupOfCards {
     }
 
     //This will return an int representation of the sum of all the cards in the dealer or players hands depending on which is passed in.
-    public int checkHandValue (GroupOfCards hands) {
+    public int CHValue (GroupOfCards hands) {
         int total = 0;
         int[] array = new int[hands.getSize()];
         for (int i = 0; i < array.length; i++) {
