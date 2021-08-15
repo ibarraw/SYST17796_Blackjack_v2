@@ -40,8 +40,11 @@ public class Deck extends GroupOfCards {
             array[i] = hands.cards.get(i).value.getNumValue();
             total += array[i];
         }
+        //The ace card can have a value of 1 or 11 depending on the hand's total value.
+        //If the total hand value is less than 12 and there is an ace in the hand, the value of the ace is 11.
+        //If the total hand value is greater than or equal to 12 and there is an ace in the hand, the value of the ace is 1.
         int aceBonus = 0;
-        for (int i = 0; i < array.length; i++) { //ace value adjustment here
+        for (int i = 0; i < array.length; i++) { 
             if (hands.cards.get(i).value.getNumValue() == 1 && total < 12) {
                 aceBonus = 10;
             }

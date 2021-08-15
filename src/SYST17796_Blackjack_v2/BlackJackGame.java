@@ -72,7 +72,7 @@ public class BlackJackGame extends Game {
             declareWinner(player);
         }
 
-        //To continue the game, player choose hit or stay
+        //To continue the game, player chooses to hit or stay
         while (deck.CHValue(player.getHand()) <= 21) { //While player hand < 21
 
             System.out.println("\nWould you like to 'hit' or 'stay'?");
@@ -83,7 +83,7 @@ public class BlackJackGame extends Game {
                 System.out.println("*****************************************************");
                 deck.deal(1, player.getHand()); //deal 1 card to player
 
-                //display cards in hand after player hit
+                //display cards in hand after player chooses to hit
                 System.out.println("\nPlayer draw a card, cards in the player's hands after hit: ");
                 playerHand.printDeck();//cards in player hand
                 System.out.println("Cards in the dealer's hands: ");
@@ -107,13 +107,13 @@ public class BlackJackGame extends Game {
             //when player choose stay
             else if (choice.equalsIgnoreCase("stay")) { //If choice not case sensitive: 'stay'
 
-                //when dealer hand value is less than 17, dealer choose hit automatically, otherwise exit the loop
+                //when dealer hand value is less than 17, dealer chooses hit automatically, otherwise exit the loop
                 while (deck.CHValue(dealer.getHand()) < 17) { //makes dealer draw if dealer hand value < 17
 
                     System.out.println("*****************************************************");
                     deck.deal(1, dealer.getHand());
 
-                    //display cards in hand after player hit
+                    //display cards in hand after player hits
                     System.out.println("\nCards in the player's hands: ");
                     playerHand.printDeck();//cards in player hand
                     System.out.println("Dealer draws a card, cards in the dealer's hands after hit: ");
@@ -124,9 +124,9 @@ public class BlackJackGame extends Game {
                     System.out.println("Dealer hand value: " + deck.CHValue(dealer.getHand()));
                 }
 
-                //both dealer and player does not choose hit anymore, compare dealer and player's hand values.
+                //both dealer and player does not choose to hit anymore, compare dealer and player's hand values.
                 if (((deck.CHValue(dealer.getHand())) > 21) || (deck.CHValue(player.getHand()) > deck.CHValue(dealer.getHand()))) {
-                    //if dealer hand value is greater than 21 ,or if player hand value is greater than dealer hand value; declareWinner: player
+                    //if dealer hand value is greater than 21, or if player hand value is greater than dealer hand value; declareWinner: player
                     declareWinner(player);
                     break; //stop while loop               
                 }
