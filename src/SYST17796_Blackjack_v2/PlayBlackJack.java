@@ -15,10 +15,14 @@ public class PlayBlackJack {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
+        PasswordValidator login = new PasswordValidator();
+
+        login.register();//temporarily use the passwordValidator as login
+
         //create a BlackJackGame object
         BlackJackGame blackjack = new BlackJackGame("Blackjack");
-        
+
         //call run() method to play the BlackJackGame
         blackjack.run();
     }
