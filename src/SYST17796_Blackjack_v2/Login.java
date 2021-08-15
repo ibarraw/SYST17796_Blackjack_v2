@@ -14,7 +14,7 @@ import java.util.Scanner;
  * Reference: Paul Bonenfant(July, 2021) In class code for course SYST 17796 Fundamentals of
  * Software Design and Development.
  */
-public class PasswordValidator {
+public class Login {
 
     /**
      * @param args the command line arguments

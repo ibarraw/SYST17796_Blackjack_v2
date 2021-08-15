@@ -41,7 +41,7 @@ public abstract class Game {
         this.players = players;
     }
 
-    public abstract void play(BlackJackDealer dealer, BlackJackPlayer player, Deck deck);
+    public abstract void play(BlackJackPlayer dealer, BlackJackPlayer player, Deck deck);
 
     public abstract void declareWinner(Player person);
 }//end class
