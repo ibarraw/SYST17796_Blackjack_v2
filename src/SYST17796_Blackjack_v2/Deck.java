@@ -40,7 +40,17 @@ public class Deck extends GroupOfCards {
             array[i] = hands.cards.get(i).value.getNumValue();
             total += array[i];
         }
-        return total;
+        int aceBonus = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (hands.cards.get(i).value.getNumValue() == 1 && total < 12) {
+                aceBonus = 10;
+            }
+            if (hands.cards.get(i).value.getNumValue() == 1 && total >= 12) {
+                aceBonus = 0;
+            }
+        }
+        return total + aceBonus;
+
     }
 
 }
