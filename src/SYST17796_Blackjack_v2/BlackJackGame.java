@@ -34,7 +34,7 @@ public class BlackJackGame extends Game {
      * @param player
      * @param deck
      */
-        public void play(BlackJackPlayer dealer, BlackJackPlayer player, Deck deck) {
+    public void play(BlackJackPlayer dealer, BlackJackPlayer player, Deck deck) {
 
         //NOTES: Deck checkHandValue() was renamed to CHValue() to save space
         Scanner input = new Scanner(System.in);
@@ -60,15 +60,13 @@ public class BlackJackGame extends Game {
         System.out.println("\nChecking player hand value");
         System.out.println("Player hand value: " + this.deck.CHValue(playerHand));
         System.out.println("Dealer hand value: " + this.deck.CHValue(dealerHand));
-        
+
         //compare initial hand value and declare winner if there is any.
-        if (deck.CHValue(dealer.getHand()) == 21 && deck.CHValue(player.getHand()) == 21){ //If dealer and player hand == 21; declareWinnter: null
+        if (deck.CHValue(dealer.getHand()) == 21 && deck.CHValue(player.getHand()) == 21) { //If dealer and player hand == 21; declareWinnter: null
             declareWinner(null);
-        }
-        else if (deck.CHValue(dealer.getHand()) == 21) { //If dealer hand == 21; declareWinner: dealer
+        } else if (deck.CHValue(dealer.getHand()) == 21) { //If dealer hand == 21; declareWinner: dealer
             declareWinner(dealer);
-        }
-        else if (deck.CHValue(player.getHand()) == 21) { //If player hand == 21; declareWinner: player
+        } else if (deck.CHValue(player.getHand()) == 21) { //If player hand == 21; declareWinner: player
             declareWinner(player);
         }
 

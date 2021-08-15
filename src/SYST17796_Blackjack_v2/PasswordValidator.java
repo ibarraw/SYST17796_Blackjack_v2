@@ -10,26 +10,31 @@ import java.util.Scanner;
  *
  * @author Paul Bonenfant
  * @author Xianjun Wang Student ID:991439820 July, 2021
- * 
- * Reference: Paul Bonenfant(July, 2021) In class code for course SYST 17796 Fundamentals of
- * Software Design and Development.
+ * @modifier Xianjun Wang  August, 2021
+ *
+ * Reference: Paul Bonenfant(July, 2021) In class code for course SYST 17796
+ * Fundamentals of Software Design and Development.
  */
-public class Login {
+public class PasswordValidator {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public void register() {
 
         boolean isValid = false;
         Scanner input = new Scanner(System.in);
 
+        System.out.println("To start the BlackJack Card Game, please enter your userName and password.");
+
+        System.out.print("Enter your userName:");
+        String userName = input.nextLine();
+        System.out.println(" ");
+
         do {
-            System.out.println("Please enter a password, the password has at least 8 characters,");
+            System.out.println("Enter your password, the password has at least 8 characters,");
             System.out.println("it contains at least one upper case letter and  at least one special character.");
 
             //user input a password
             String password = input.nextLine();
+            System.out.println(" ");
 
             //check if the input password is valid
             isValid = checkLength(password) && checkSpecialChar(password) && checkUpperCase(password);
@@ -68,4 +73,3 @@ public class Login {
         return upperCaseCount > 0;
     }
 }
-
