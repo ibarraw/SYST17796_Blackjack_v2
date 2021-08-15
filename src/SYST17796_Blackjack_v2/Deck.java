@@ -42,10 +42,10 @@ public class Deck extends GroupOfCards {
         }
         int aceBonus = 0;
         for (int i = 0; i < array.length; i++) {
-            if (hands.cards.get(i).value.getNumValue() == 1 && total <= 21) {
+            if (hands.cards.get(i).value.getNumValue() == 1 && total < 12) {
                 aceBonus = 10;
             }
-            if (hands.cards.get(i).value.getNumValue() == 1 && total > 21) {
+            if (hands.cards.get(i).value.getNumValue() == 1 && total >= 12) {
                 aceBonus = 0;
             }
         }
