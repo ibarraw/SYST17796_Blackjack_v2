@@ -28,7 +28,7 @@ public abstract class Game {
     }
 
     /**
-     * @return the players of this game
+     * @return the players of  this game
      */
     public ArrayList<Player> getPlayers() {
         return players;
