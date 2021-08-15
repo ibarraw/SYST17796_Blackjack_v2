@@ -12,14 +12,12 @@ public enum Value {
     private final int numValue;
 
     //Constructor
-    Value (int numValue) {
+    Value(int numValue) {
         this.numValue = numValue;
-
     }
 
-    public int getNumValue () {
+    public int getNumValue() {
         return numValue;
     }
-
 
 }
