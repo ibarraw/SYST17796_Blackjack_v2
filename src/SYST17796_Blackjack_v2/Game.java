@@ -15,7 +15,8 @@ public abstract class Game {
     private final String name;//the title of the game
     private ArrayList<Player> players;// the players of the game
 
-    public Game(String name) {
+    //Game constructor
+    public Game (String name) {
         this.name = name;
         players = new ArrayList();
     }
@@ -23,25 +24,31 @@ public abstract class Game {
     /**
      * @return the name
      */
-    public String getName() {
+    public String getName () {
         return name;
     }
 
     /**
-     * @return the players of  this game
+     * @return the players of this game
      */
-    public ArrayList<Player> getPlayers() {
+    public ArrayList<Player> getPlayers () {
         return players;
     }
 
     /**
      * @param players the players of this game
      */
-    public void setPlayers(ArrayList<Player> players) {
+    public void setPlayers (ArrayList<Player> players) {
         this.players = players;
     }
 
-    public abstract void play(BlackJackPlayer dealer, BlackJackPlayer player, Deck deck);
+    /**
+     *
+     * @param dealer is a BlackJackPlayer
+     * @param player is a BlackJackPlayer
+     * @param deck is a Deck of Cards
+     */
+    public abstract void play (BlackJackPlayer dealer, BlackJackPlayer player, Deck deck);
 
-    public abstract void declareWinner(Player person);
+    public abstract void declareWinner (Player person);
 }//end class

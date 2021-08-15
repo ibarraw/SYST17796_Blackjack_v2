@@ -10,7 +10,7 @@ package SYST17796_Blackjack_v2;
 public class Deck extends GroupOfCards {
 
     //Bulid a BlackJack Card deck
-    public Deck() {
+    public Deck () {
         for (int i = 0; i < Suit.values().length; i++) {
             for (int x = 0; x < Value.values().length; x++) {
                 cards.add(new BlackJackCard(Suit.values()[i], Value.values()[x]));
@@ -22,7 +22,7 @@ public class Deck extends GroupOfCards {
 
     //Deal cards to the dealer or the players. The number of cards dealed will be depend 
     //on the situaiton including starting the game, hit, stay.
-    public void deal(int howMany, GroupOfCards hand) {
+    public void deal (int howMany, GroupOfCards hand) {
         //GroupOfCards checkRecipient = new GroupOfCards();
         int high = cards.size() - 1;
         int low = high - howMany;
@@ -33,7 +33,7 @@ public class Deck extends GroupOfCards {
     }
 
     //This will return an int representation of the sum of all the cards in the dealer or players hands depending on which is passed in.
-    public int CHValue(GroupOfCards hands) {
+    public int CHValue (GroupOfCards hands) {
         int total = 0;
         int[] array = new int[hands.getSize()];
         for (int i = 0; i < array.length; i++) {
@@ -41,7 +41,7 @@ public class Deck extends GroupOfCards {
             total += array[i];
         }
         int aceBonus = 0;
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) { //ace value adjustment here
             if (hands.cards.get(i).value.getNumValue() == 1 && total < 12) {
                 aceBonus = 10;
             }

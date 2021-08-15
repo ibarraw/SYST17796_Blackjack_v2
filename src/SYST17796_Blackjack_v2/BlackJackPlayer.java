@@ -9,7 +9,8 @@ package SYST17796_Blackjack_v2;
 public class BlackJackPlayer extends Player {
 
     //Player constructor for the players and the dealer
-    public BlackJackPlayer(String name, GroupOfCards hand) {
+    //Takes in a name, and the generated group of cards
+    public BlackJackPlayer (String name, GroupOfCards hand) {
         super(name, hand);
     }
 }

@@ -1,6 +1,5 @@
 package SYST17796_Blackjack_v2;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -20,12 +19,12 @@ public class BlackJackGame extends Game {
     Deck deck = new Deck();
 
     //constructor
-    public BlackJackGame(String name) {
+    public BlackJackGame (String name) {
         super(name);
     }
 
     // create run() method for being called in main method and playing BlackJackGame there
-    public void run() {
+    public void run () {
         play(dealer, player, deck);
     }
 
@@ -34,7 +33,8 @@ public class BlackJackGame extends Game {
      * @param player
      * @param deck
      */
-    public void play(BlackJackPlayer dealer, BlackJackPlayer player, Deck deck) {
+    @Override
+    public void play (BlackJackPlayer dealer, BlackJackPlayer player, Deck deck) {
 
         //NOTES: Deck checkHandValue() was renamed to CHValue() to save space
         Scanner input = new Scanner(System.in);
@@ -64,9 +64,11 @@ public class BlackJackGame extends Game {
         //compare initial hand value and declare winner if there is any.
         if (deck.CHValue(dealer.getHand()) == 21 && deck.CHValue(player.getHand()) == 21) { //If dealer and player hand == 21; declareWinnter: null
             declareWinner(null);
-        } else if (deck.CHValue(dealer.getHand()) == 21) { //If dealer hand == 21; declareWinner: dealer
+        }
+        else if (deck.CHValue(dealer.getHand()) == 21) { //If dealer hand == 21; declareWinner: dealer
             declareWinner(dealer);
-        } else if (deck.CHValue(player.getHand()) == 21) { //If player hand == 21; declareWinner: player
+        }
+        else if (deck.CHValue(player.getHand()) == 21) { //If player hand == 21; declareWinner: player
             declareWinner(player);
         }
 
@@ -75,8 +77,6 @@ public class BlackJackGame extends Game {
 
             System.out.println("\nWould you like to 'hit' or 'stay'?");
             String choice = (input.nextLine()); //console input here
-
-            //--------------------------------------------------------------------------
             //when player choose hit
             if (choice.equalsIgnoreCase("hit")) { //if choice not case sensitive: 'hit'
 
@@ -97,7 +97,8 @@ public class BlackJackGame extends Game {
                 if (deck.CHValue(player.getHand()) > 21) { //If player hand value > 21; declareWinner: dealer
                     declareWinner(dealer);
                     break; //stop while loop
-                } else if (deck.CHValue(player.getHand()) == 21) { //If player hand == 21; declareWinner: player
+                }
+                else if (deck.CHValue(player.getHand()) == 21) { //If player hand == 21; declareWinner: player
                     declareWinner(player);
                     break;
                 }
@@ -128,10 +129,12 @@ public class BlackJackGame extends Game {
                     //if dealer hand value is greater than 21 ,or if player hand value is greater than dealer hand value; declareWinner: player
                     declareWinner(player);
                     break; //stop while loop               
-                } else if (deck.CHValue(player.getHand()) == deck.CHValue(dealer.getHand())) { //if player hand value == dealer hand value; declareWinner: null
+                }
+                else if (deck.CHValue(player.getHand()) == deck.CHValue(dealer.getHand())) { //if player hand value == dealer hand value; declareWinner: null
                     declareWinner(null);  // a tie, no winner
                     break; //stop while loop
-                } else {
+                }
+                else {
                     declareWinner(dealer);//dealer win
                     break; //stop while loop
                 }
@@ -139,11 +142,12 @@ public class BlackJackGame extends Game {
         } //while loop ends here
     } //play() ends here
 
-    @Override
-    public void declareWinner(Player person) {
+    @Override //Declare the winner of the game
+    public void declareWinner (Player person) {
         if (person == null) {
             System.out.println("Dealer and player are the same! Push!");
-        } else {
+        }
+        else {
             System.out.println("\nThe " + person.getName() + " has won the game!");
         }
     }

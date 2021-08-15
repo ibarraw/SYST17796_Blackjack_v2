@@ -15,24 +15,24 @@ public abstract class Card { //default modifier for child classes
     protected Suit suit;
     protected Value value;
 
-    public Card(Suit suit, Value value) {
+    public Card (Suit suit, Value value) {
         this.suit = suit;
         this.value = value;
     }
 
-    public Suit getSuit() {
+    public Suit getSuit () {
         return suit;
     }
 
-    public void setSuit(Suit suit) {
+    public void setSuit (Suit suit) {
         this.suit = suit;
     }
 
-    public Value getValue() {
+    public Value getValue () {
         return value;
     }
 
-    public void setValue(Value value) {
+    public void setValue (Value value) {
         this.value = value;
     }
 
@@ -42,5 +42,6 @@ public abstract class Card { //default modifier for child classes
      * @return a String representation of a card. Could be an UNO card, a
      * regular playing card etc.
      */
-    public abstract String toString();
+    @Override
+    public abstract String toString ();
 }

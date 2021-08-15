@@ -19,7 +19,8 @@ public class GroupOfCards {
     //The group of cards, stored in an ArrayList
     protected ArrayList<Card> cards;
 
-    public GroupOfCards() {
+    //New ArrayList creation
+    public GroupOfCards () {
         cards = new ArrayList<>();
     }
 
@@ -28,19 +29,22 @@ public class GroupOfCards {
      *
      * @return the group of cards.
      */
-    public ArrayList<Card> getCards() {
+    public ArrayList<Card> getCards () {
         return cards;
     }
 
-    public void addCard(Card c) {
+    //add cards to the ArrayList
+    public void addCard (Card c) {
         cards.add(c);
     }
 
-    public void shuffle() {
+    //shuffle the cards
+    public void shuffle () {
         Collections.shuffle(cards);
     }
 
-    public void printDeck() {
+    //print all the cards
+    public void printDeck () {
         int index = 0;
         for (Card c : cards) {
             index++;
@@ -51,7 +55,7 @@ public class GroupOfCards {
     /**
      * @return the size of the group of cards
      */
-    public int getSize() {
+    public int getSize () {
         return cards.size();
     }
 

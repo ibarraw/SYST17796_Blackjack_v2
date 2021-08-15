@@ -14,11 +14,7 @@ public class PlayBlackJack {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-
-        PasswordValidator login = new PasswordValidator();
-
-        login.register();//temporarily use the passwordValidator as login
+    public static void main (String[] args) {
 
         //create a BlackJackGame object
         BlackJackGame blackjack = new BlackJackGame("Blackjack");
