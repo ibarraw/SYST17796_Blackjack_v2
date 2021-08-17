@@ -39,6 +39,8 @@ public class BlackJackGame extends Game {
         //NOTES: Deck checkHandValue() was renamed to CHValue() to save space
         Scanner input = new Scanner(System.in);
 
+        //We are using printDeck() to print out the cards before and after dealing to help view the card distribution process.
+        //In order to reduce the spam when running the game, please comment out the following lines: 45, 46, 52, 53
         //generate the full deck of 52 cards for the game
         System.out.println("52 Cards in the deck when the game starts:");
         this.deck.printDeck();
